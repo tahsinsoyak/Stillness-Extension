@@ -41,7 +41,7 @@ export const PopupApp = () => {
             <Pause className="w-4 h-4 text-white" />
           </div>
           <div>
-            <h1 className="text-sm font-semibold tracking-tight leading-tight">Stillness</h1>
+            <h1 className="text-sm font-semibold tracking-tight leading-tight">Stillness Extension</h1>
             <p className="text-[11px] text-light-text-tertiary dark:text-dark-text-tertiary mt-0.5">Mindful pause.</p>
           </div>
         </div>

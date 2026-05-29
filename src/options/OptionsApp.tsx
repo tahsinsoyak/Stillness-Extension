@@ -70,7 +70,7 @@ export const OptionsApp = () => {
             <Pause className="w-4.5 h-4.5 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-semibold tracking-tight">Stillness</h1>
+            <h1 className="text-xl font-semibold tracking-tight">Stillness Extension</h1>
             <p className="text-[13px] text-light-text-secondary dark:text-dark-text-secondary">Mindful digital decisions.</p>
           </div>
         </div>
