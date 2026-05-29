@@ -8,9 +8,7 @@ Stillness is a premium, local-only Chrome extension that helps you slow down bef
 
 | Extension Popup | The Zen Room (Ocean Breath) |
 | :---: | :---: |
-| ![Stillness Popup Preview](https://placehold.co/380x540/09090b/fafafa/png?text=Stillness+Popup) | ![Ocean Breath Zen Room](https://placehold.co/800x450/020205/818cf8/png?text=Zen+Room) |
-
-> **🎨 Note to Developer:** As an AI agent, I cannot take live screenshots of your browser. Please replace the placeholders above with your actual screenshots to showcase the beautiful liquid animations!
+| ![Stillness Popup Preview](./assets/popup.png) | ![Ocean Breath Zen Room](./assets/zen-room.png) |
 
 ## Core Features ✨
 - **Ocean Breath Atmosphere:** Multiple organic, animated liquid waves with deep parallax movement.
