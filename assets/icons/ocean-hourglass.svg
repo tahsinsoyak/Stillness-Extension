@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <defs>
+    <linearGradient id="ocean-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+  <!-- Background Disc -->
+  <rect width="32" height="32" rx="8" fill="#141416"/>
+  <!-- Hourglass Frame -->
+  <path d="M10 7 H22 M10 25 H22 M11 7 C 11 12, 14 14, 14 16 C 14 18, 11 20, 11 25 M21 7 C 21 12, 18 14, 18 16 C 18 18, 21 20, 21 25" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Calming liquid wave inside -->
+  <path d="M12 21 C 14 20, 15 23, 17 22 C 19 21, 20 23, 20 23 V24 H12 Z" fill="url(#ocean-glow)" opacity="0.85"/>
+  <circle cx="16" cy="11" r="1.5" fill="#14B8A6"/>
+</svg>
