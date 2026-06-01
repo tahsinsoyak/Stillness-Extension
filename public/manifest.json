@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Stillness Extension",
+  "name": "Stillness",
   "version": "1.0.0",
   "description": "A mindful pause before digital decisions. Ocean-themed cooldown for impulsive browsing.",
   "action": {
     "default_popup": "src/popup/index.html",
-    "default_title": "Stillness Extension"
+    "default_title": "Stillness"
   },
   "options_ui": {
     "page": "src/options/index.html",

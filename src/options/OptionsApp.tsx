@@ -71,7 +71,7 @@ export const OptionsApp = () => {
         <div className="flex items-center gap-3 mb-2">
           <Logo size={36} />
           <div>
-            <h1 className="text-xl font-semibold tracking-tight">Stillness Extension</h1>
+            <h1 className="text-xl font-semibold tracking-tight">Stillness <span className="text-[14px] text-light-text-tertiary dark:text-dark-text-tertiary font-normal">Extension</span></h1>
             <p className="text-[13px] text-light-text-secondary dark:text-dark-text-secondary">Mindful digital decisions.</p>
           </div>
         </div>

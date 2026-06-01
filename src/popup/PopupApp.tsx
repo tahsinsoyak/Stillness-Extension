@@ -43,7 +43,7 @@ export const PopupApp = () => {
         <div className="flex items-center gap-3">
           <Logo size={32} />
           <div>
-            <h1 className="text-sm font-semibold tracking-tight leading-tight">Stillness Extension</h1>
+            <h1 className="text-sm font-semibold tracking-tight leading-tight">Stillness <span className="text-[10px] text-light-text-tertiary dark:text-dark-text-tertiary font-normal">Extension</span></h1>
             <p className="text-[11px] text-light-text-tertiary dark:text-dark-text-tertiary mt-0.5">Mindful pause.</p>
           </div>
         </div>

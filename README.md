@@ -1,4 +1,4 @@
-# Stillness Extension ⏳
+# Stillness ⏳
 
 > **A mindful pause before digital decisions.**
 
