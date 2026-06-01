@@ -275,7 +275,7 @@ export const OptionsApp = () => {
         )}
 
         {activeTab === 'settings' && (
-          <div className="flex flex-col gap-4 max-w-[480px]">
+          <div className="flex flex-col gap-5">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -404,6 +404,14 @@ export const OptionsApp = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="flex justify-between items-center text-[12px] text-light-text-tertiary dark:text-dark-text-tertiary px-1 mt-1">
+              <span>All preferences are saved automatically in real-time.</span>
+              <span className="flex items-center gap-1.5 text-accent font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                Auto-saved
+              </span>
+            </div>
 
             <p className="text-center text-[11px] text-light-text-tertiary/60 dark:text-dark-text-tertiary/50 pt-4 tracking-wide">
               LOCAL ONLY · YOUR DATA STAYS IN THIS BROWSER

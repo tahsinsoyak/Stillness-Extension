@@ -181,13 +181,33 @@ export const CooldownPage = () => {
         window.location.href = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'cooldown_skipped=true';
       }
     } else {
-      window.close();
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        chrome.tabs?.getCurrent((tab) => {
+          if (tab?.id) {
+            chrome.tabs.remove(tab.id);
+          } else {
+            window.close();
+          }
+        });
+      }
     }
   };
 
   const handleDecideLater = async () => {
     await saveHistory('decided_later');
-    window.close();
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      chrome.tabs?.getCurrent((tab) => {
+        if (tab?.id) {
+          chrome.tabs.remove(tab.id);
+        } else {
+          window.close();
+        }
+      });
+    }
   };
 
   const formatTime = (seconds: number) => {
