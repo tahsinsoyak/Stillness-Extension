@@ -3,8 +3,9 @@ import { useRulesStore } from '../shared/store/useRulesStore';
 import { Button } from '../shared/components/Button';
 import { Switch } from '../shared/components/Switch';
 import { Badge } from '../shared/components/Badge';
-import { Plus, Settings, Timer, Pause } from 'lucide-react';
+import { Plus, Settings, Timer } from 'lucide-react';
 import { ACTION_TYPES } from '../shared/constants/defaultPrompts';
+import { Logo } from '../shared/components/Logo';
 
 export const PopupApp = () => {
   const { rules, loadRules, toggleRule } = useRulesStore();
@@ -37,9 +38,7 @@ export const PopupApp = () => {
     <div className="w-[380px] min-h-[540px] bg-light-base dark:bg-dark-base text-light-text dark:text-dark-text flex flex-col animate-fade-in">
       <div className="flex items-center justify-between px-5 pt-5 pb-4">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-component bg-accent flex items-center justify-center">
-            <Pause className="w-4 h-4 text-white" />
-          </div>
+          <Logo size={32} />
           <div>
             <h1 className="text-sm font-semibold tracking-tight leading-tight">Stillness Extension</h1>
             <p className="text-[11px] text-light-text-tertiary dark:text-dark-text-tertiary mt-0.5">Mindful pause.</p>

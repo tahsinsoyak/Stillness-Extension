@@ -10,8 +10,9 @@ import { Input } from '../shared/components/Input';
 import { Badge } from '../shared/components/Badge';
 import { ACTION_TYPES, DEFAULT_PROMPTS } from '../shared/constants/defaultPrompts';
 import { cn } from '../shared/lib/utils';
-import { Plus, Trash2, History, Settings, Shield, Pause, Clock, Check } from 'lucide-react';
+import { Plus, Trash2, History, Settings, Shield, Clock, Check } from 'lucide-react';
 import { format } from 'date-fns';
+import { Logo } from '../shared/components/Logo';
 
 export const OptionsApp = () => {
   const { rules, loadRules, deleteRule, toggleRule, addRule } = useRulesStore();
@@ -66,9 +67,7 @@ export const OptionsApp = () => {
       <div className="max-w-[720px] mx-auto px-6 pt-12">
 
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-9 h-9 rounded-component bg-accent flex items-center justify-center">
-            <Pause className="w-4.5 h-4.5 text-white" />
-          </div>
+          <Logo size={36} />
           <div>
             <h1 className="text-xl font-semibold tracking-tight">Stillness Extension</h1>
             <p className="text-[13px] text-light-text-secondary dark:text-dark-text-secondary">Mindful digital decisions.</p>

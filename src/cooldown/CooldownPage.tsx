@@ -5,8 +5,9 @@ import { CooldownRule, DecisionHistoryItem } from '../shared/types/cooldown';
 import { Button } from '../shared/components/Button';
 import { Textarea } from '../shared/components/Textarea';
 import { cn } from '../shared/lib/utils';
-import { Check, Pause, ArrowRight, Home } from 'lucide-react';
+import { Check, ArrowRight, Home } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Logo } from '../shared/components/Logo';
 
 const OceanWaves = () => (
   <div className="fixed inset-0 overflow-hidden -z-10 bg-[#04040a] pointer-events-none">
@@ -219,7 +220,7 @@ export const CooldownPage = () => {
             >
               {isComplete
                 ? <Check className="w-8 h-8" strokeWidth={3} />
-                : <Pause className="w-7 h-7 fill-current" />
+                : <Logo size={32} />
               }
             </motion.div>
             <span className="font-mono text-[60px] font-bold tabular-nums tracking-tighter leading-none mb-2 text-white/95">
