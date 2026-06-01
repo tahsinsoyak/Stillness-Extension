@@ -63,8 +63,10 @@ export const OptionsApp = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-light-base dark:bg-dark-base text-light-text dark:text-dark-text pb-16 animate-fade-in">
-      <div className="max-w-[720px] mx-auto px-6 pt-12">
+    <div className="min-h-screen bg-light-base dark:bg-dark-base text-light-text dark:text-dark-text pb-16 animate-fade-in relative overflow-hidden">
+      {/* Decorative gradient glow for a premium feel */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.06)_0%,rgba(99,102,241,0.02)_50%,transparent_100%)] pointer-events-none -z-10" />
+      <div className="max-w-[720px] mx-auto px-6 pt-12 relative z-10">
 
         <div className="flex items-center gap-3 mb-2">
           <Logo size={36} />
@@ -274,6 +276,58 @@ export const OptionsApp = () => {
 
         {activeTab === 'settings' && (
           <div className="flex flex-col gap-4 max-w-[480px]">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-accent" />
+                  Timer Settings
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[13px] font-medium">Default Pause Duration</p>
+                      <p className="text-[12px] text-light-text-tertiary dark:text-dark-text-tertiary mt-0.5">
+                        Duration for manual instant pauses.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        min={1}
+                        max={120}
+                        className="w-16 text-center text-[13px] h-8"
+                        value={settings.defaultCooldownMinutes}
+                        onChange={(e) => {
+                          const val = parseInt(e.target.value);
+                          if (val > 0) updateSettings({ defaultCooldownMinutes: val });
+                        }}
+                      />
+                      <span className="text-[12px] text-light-text-tertiary dark:text-dark-text-tertiary font-medium">min</span>
+                    </div>
+                  </div>
+                  {/* Preset buttons */}
+                  <div className="flex gap-2 mt-1">
+                    {[5, 10, 15, 30, 45, 60].map((mins) => (
+                      <button
+                        key={mins}
+                        onClick={() => updateSettings({ defaultCooldownMinutes: mins })}
+                        className={cn(
+                          "px-2.5 py-1 text-[11px] font-medium rounded-pill border transition-all duration-150",
+                          settings.defaultCooldownMinutes === mins
+                            ? "bg-accent/10 border-accent text-accent"
+                            : "border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface text-light-text-secondary dark:text-dark-text-secondary hover:bg-light-elevated dark:hover:bg-dark-elevated"
+                        )}
+                      >
+                        {mins}m
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">

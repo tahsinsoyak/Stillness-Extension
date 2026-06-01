@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRulesStore } from '../shared/store/useRulesStore';
+import { useSettingsStore } from '../shared/store/useSettingsStore';
 import { Button } from '../shared/components/Button';
 import { Switch } from '../shared/components/Switch';
 import { Badge } from '../shared/components/Badge';
@@ -9,11 +10,13 @@ import { Logo } from '../shared/components/Logo';
 
 export const PopupApp = () => {
   const { rules, loadRules, toggleRule } = useRulesStore();
+  const { settings, loadSettings } = useSettingsStore();
   const [currentDomain, setCurrentDomain] = useState('');
   const [currentUrl, setCurrentUrl] = useState('');
 
   useEffect(() => {
     loadRules();
+    loadSettings();
     chrome.tabs?.query({ active: true, currentWindow: true }, (tabs) => {
       const url = tabs[0]?.url;
       if (url && !url.startsWith('chrome') && !url.startsWith('about')) {
@@ -23,7 +26,7 @@ export const PopupApp = () => {
         } catch (e) {}
       }
     });
-  }, [loadRules]);
+  }, [loadRules, loadSettings]);
 
   const handleOptionsClick = () => chrome.runtime.openOptionsPage();
   const getActionLabel = (id: string) => ACTION_TYPES.find(a => a.id === id)?.label || 'Action';
@@ -65,7 +68,7 @@ export const PopupApp = () => {
             className="w-full text-[13px] bg-accent hover:bg-accent-hover text-white shadow-sm"
             onClick={handleManualPause}
           >
-            Start 10-min pause now
+            Start {settings.defaultCooldownMinutes}-min pause now
           </Button>
           <p className="text-[10px] text-center mt-2.5 opacity-40">Use this to pause your current activity immediately.</p>
         </div>

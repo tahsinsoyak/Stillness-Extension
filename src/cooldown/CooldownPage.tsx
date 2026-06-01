@@ -118,30 +118,34 @@ export const CooldownPage = () => {
   const { settings, loadSettings } = useSettingsStore();
 
   useEffect(() => {
-    loadSettings();
-    const params = new URLSearchParams(window.location.search);
-    const target = params.get('target');
-    const id = params.get('ruleId');
+    const init = async () => {
+      await loadSettings();
+      const currentSettings = await storage.getSettings();
+      
+      const params = new URLSearchParams(window.location.search);
+      const target = params.get('target');
+      const id = params.get('ruleId');
 
-    if (target) setTargetUrl(target);
-    if (id) {
-      setRuleId(id);
-      storage.getRules().then(rules => {
+      if (target) setTargetUrl(target);
+      if (id) {
+        setRuleId(id);
+        const rules = await storage.getRules();
         const found = rules.find(r => r.id === id);
         if (found) {
           setRule(found);
           const t = found.cooldownMinutes * 60;
           setTotalTime(t);
           setTimeLeft(t);
-          setSessionStartedAt(new Date().toISOString());
         }
-      });
-    } else {
-      const defaultTime = 10 * 60;
-      setTotalTime(defaultTime);
-      setTimeLeft(defaultTime);
+      } else {
+        const defaultTime = currentSettings.defaultCooldownMinutes * 60;
+        setTotalTime(defaultTime);
+        setTimeLeft(defaultTime);
+      }
       setSessionStartedAt(new Date().toISOString());
-    }
+    };
+    
+    init();
   }, [loadSettings]);
 
   useEffect(() => {
