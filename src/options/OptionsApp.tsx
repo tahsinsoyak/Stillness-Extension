@@ -10,7 +10,7 @@ import { Input } from '../shared/components/Input';
 import { Badge } from '../shared/components/Badge';
 import { ACTION_TYPES, DEFAULT_PROMPTS } from '../shared/constants/defaultPrompts';
 import { cn } from '../shared/lib/utils';
-import { Plus, Trash2, History, Settings, Shield, Clock, Check } from 'lucide-react';
+import { Plus, Trash2, History, Settings, Shield, Clock, Check, Heart } from 'lucide-react';
 import { format } from 'date-fns';
 import { Logo } from '../shared/components/Logo';
 
@@ -325,6 +325,29 @@ export const OptionsApp = () => {
                     ))}
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-accent/20 bg-accent/5">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Heart className="w-4 h-4 text-accent animate-pulse" />
+                  Support Stillness
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-[13px] text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                  Stillness is 100% free, private, and open-source. If this extension has helped you make better, more mindful decisions, please consider supporting its development!
+                </p>
+                <a
+                  href="https://patreon.com/tahsinsoyak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2.5 rounded-component bg-accent hover:bg-accent-hover text-white text-[13px] font-semibold transition-all duration-150 shadow-sm"
+                >
+                  <Heart className="w-4 h-4" fill="currentColor" />
+                  Support on Patreon ❤️
+                </a>
               </CardContent>
             </Card>
 
